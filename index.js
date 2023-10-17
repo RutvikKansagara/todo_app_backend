@@ -8,7 +8,15 @@ const todoRoutes = require("./routes/todoRoutes");
 const connectToDb = require("./config/db");
 app.use(express.urlencoded({extended: true})); 
 app.use(express.json());
-app.use(cors());
+
+// Set up CORS to allow only specific origins
+const corsOptions = {
+    origin: "https://todo-app-frontend-gilt.vercel.app/", // Replace with your allowed origin
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    credentials: true, // Enable credentials (cookies, Authorization headers, etc.)
+    optionsSuccessStatus: 204, // Some legacy browsers (IE11, various SmartTVs) choke on 204
+  };
+app.use(cors(corsOptions));
 
 
 connectToDb();
