@@ -5,6 +5,10 @@ const mongoose = require("mongoose");
 const getAllTodos = async (req,res) => {
     try {
         const allTasks = await Todo.find({});
+        if(allTasks.length === 0){
+        res.status(200).json({status:"success",message:"you does not created any tasks till now"});
+
+        }
         res.status(200).json({status:"success",message:"all tasks fetched successfully",allTasks});
     } catch (error) {
         console.log(error);
