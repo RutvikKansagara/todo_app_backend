@@ -5,7 +5,7 @@ const router = express.Router();
 
 const {getAllTodos,createTodo,getTaskDetails,editTaskDetails,deleteTask,completedTask,deleteAllTodos} = require("../controllers/todoController");
 
-router.get("/",getAllTodos);
+router.get("/all-tasks",getAllTodos);
 
 router.post("/create",createTodo);
 
