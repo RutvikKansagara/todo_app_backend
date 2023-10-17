@@ -9,7 +9,7 @@ const getAllTodos = async (req,res) => {
         return res.status(200).json({status:"success",message:"you does not created any tasks till now"});
 
         }
-        res.status(200).json({status:"success",message:"all tasks fetched successfully",allTasks});
+        return res.status(200).json({status:"success",message:"all tasks fetched successfully",allTasks});
     } catch (error) {
         console.log(error);
         console.log("----------------------------------------------------------------");
@@ -17,7 +17,7 @@ const getAllTodos = async (req,res) => {
         console.log("----------------------------------------------------------------");
         console.log(error.response);
         console.log("----------------------------------------------------------------");
-        res.status(500).json({status:"error",message:error.message});
+        return res.status(500).json({status:"error",message:error.message});
     }
 }
 
