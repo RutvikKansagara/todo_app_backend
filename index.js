@@ -11,10 +11,10 @@ app.use(express.json());
 
 // Set up CORS to allow only specific origins
 const corsOptions = {
-    origin: "https://todo-app-frontend-gilt.vercel.app/", // Replace with your allowed origin
+    origin: "https://todo-app-frontend-gilt.vercel.app", 
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    credentials: true, // Enable credentials (cookies, Authorization headers, etc.)
-    optionsSuccessStatus: 204, // Some legacy browsers (IE11, various SmartTVs) choke on 204
+    credentials: true, 
+    optionsSuccessStatus: 204, 
   };
 app.use(cors(corsOptions));
 
